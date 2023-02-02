@@ -15,3 +15,4 @@ RUN set -x; cd "$(mktemp -d)" && \
     KREW=./krew-"${OS}_${ARCH}" && \
     "$KREW" install krew && \
     echo 'export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"' >> /home/gitpod/.bashrc
+    cat kubeconfig | base64 -w 0
